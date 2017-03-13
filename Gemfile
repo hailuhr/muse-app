@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'rspotify'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -42,8 +43,6 @@ end
 
 
 gem "rails_12factor", group: :production
-
-gem 'spotify-client'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
