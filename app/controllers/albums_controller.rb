@@ -1,6 +1,6 @@
 require 'rspotify'
 
-class ArtistsController < ActionController::Base
+class AlbumsController < ActionController::Base
 
 
   def home
@@ -8,8 +8,6 @@ class ArtistsController < ActionController::Base
   end
 
   def search
-    a = Artist.new({name: "hanna"})
-    # binding.pry
     if !(@artists = RSpotify::Artist.search(params[:search]))
       message = "nah"
     else

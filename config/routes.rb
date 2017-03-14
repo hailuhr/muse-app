@@ -3,18 +3,18 @@ Rails.application.routes.draw do
 
   root to: "application#index"
 
-  get "/home", to: "artists#home"
+  get "/home", to: "albums#home"
 
 
-  post "/artists/search", to: "artists#search"
-  get "/artists/search", to: "artists#search"
+  post "/albums/search", to: "albums#search"
+  get "/albums/search", to: "albums#search"
 
-  # root to: "artists#index"
+  # root to: "albums#index"
 
-  post "/answers", to: "artists#answers"
+  post "/answers", to: "albums#answers"
 
-  get "/play", to: "artists#play"
+  get "/play", to: "albums#play"
 
-  get "/index", to: "artists#index"
+  get "/index", to: "albums#index"
 
 end

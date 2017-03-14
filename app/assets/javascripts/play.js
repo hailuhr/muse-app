@@ -1,5 +1,5 @@
 $(document).on('ready', function() {
-  $("body").on("click", "#artist_search", getQuestion)
+  $("body").on("click", "#albums_search", getQuestion)
   // debugger;
 
 });
@@ -19,7 +19,7 @@ function getQuestion(e){
       $.ajax({
           cache: false,
           method: "get",
-          url: "/artists/search",
+          url: "/albums/search",
           data: {
             search: name
           },
