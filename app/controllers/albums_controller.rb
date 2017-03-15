@@ -17,6 +17,7 @@ class AlbumsController < ActionController::Base
     else
       # binding.pry
       @artist = RSpotify::Artist.search(params[:search]).first
+      # binding.pry
       @albums = fetch_random_five(@artist.top_tracks(:US).map{|track| track.album })
 
       if @albums.nil?
