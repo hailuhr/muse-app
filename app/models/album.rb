@@ -10,12 +10,7 @@ class Album
 
   def initialize(args)
 
-    # @release_year = {release_year: "play"}
-    # @popularity_rate = args.popularity
-    # @one_track = args.tracks.sample.name
-    # binding.pry
     year = args.release_date.to_i
-    # year = Date.parse(release_date).year
     @release_year = {answer: year, question: "When was the track #{args.name} released?"}
     @popularity_rate = {answer: args.popularity, question: "Guess #{args.name}'s popularity rate on Spotify?"}
     track = args.tracks.sample.name
@@ -31,17 +26,30 @@ class Album
     self.release_year[:answer].to_i + (-5..5).to_a.sample
   end
 
+  def release_year_min_option
+    self.release_year[:answer].to_i + (-4...0).to_a.sample
+  end
+
+  def release_year_max_option
+    before_this_year = DateTime.now.year - self.release_year[:answer].to_i
+    self.release_year[:answer].to_i + (0..before_this_year).to_a.sample
+  end
+
+
+
   def popularity_option
     before_100 = 99 - self.popularity_rate[:answer]
-
-    self.popularity_rate[:answer] + [-15, before_100].to_a.sample
-    # binding.pry
+    self.popularity_rate[:answer] + [-10, before_100].to_a.sample
   end
 
-  def answers
-
+  def popularity_min_option
+    self.popularity_rate[:answer] + [-5, -1].to_a.sample
   end
 
+  def popularity_max_option
+    before_max_100 = 100 - self.popularity_rate[:answer]
+    self.popularity_rate[:answer] + [0, before_max_100].to_a.sample
+  end
 
 
 

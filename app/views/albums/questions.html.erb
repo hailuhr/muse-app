@@ -14,7 +14,7 @@
         <label><input type="text" name="release_year" value=""></label>
         <input type="hidden" style="font-family: Avenir" name="release_year_id" value="<%= @album_questions[0].id %>">
         <br>
-        <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @album_questions[0].release_year_option %> or <%= @album_questions[0].release_year_option %>)</p>
+        <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @album_questions[0].release_year_min_option %> - <%= @album_questions[0].release_year_max_option %>)</p>
 
         <br>
         <br>
@@ -23,14 +23,15 @@
           <label><input type="text" name="popularity_rate" value=""></label>
           <input type="hidden" style="font-family: Avenir" name="popularity_rate_id" value="<%= @album_questions[2].id%>">
           <br>
-          <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @album_questions[2].popularity_rate[:answer] %>% - <%= @album_questions[2].popularity_option %>%)</p>
+          <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @album_questions[2].popularity_min_option %>% - <%= @album_questions[2].popularity_max_option %>%)</p>
         <br>
         <br>
+
 
       <p><%= @album_questions[1].track[:question] %></p>
           <label><input type="text" name="track_answer" value=""></label>
           <input type="hidden" style="font-family: Avenir" name="track" value="<%=@album_questions[1].track[:answer]%>">
-          <p class="hint" style="font-family: Avenir">(True or False)</p>
+          <p class="hint" style="font-family: Avenir">(Yes or No)</p>
           <br>
           <br>
 
