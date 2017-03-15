@@ -16,7 +16,7 @@ class Album
     # binding.pry
     year = args.release_date.to_i
     # year = Date.parse(release_date).year
-    @release_year = {answer: year, question: "When was the album #{args.name} released?"}
+    @release_year = {answer: year, question: "When was the track #{args.name} released?"}
     @popularity_rate = {answer: args.popularity, question: "Guess #{args.name}'s popularity rate on Spotify?"}
     track = args.tracks.sample.name
     @track = {answer: track, question: "Is the song '#{track}' on the #{args.name} album?"}
@@ -37,6 +37,12 @@ class Album
     self.popularity_rate[:answer] + [-15, before_100].to_a.sample
     # binding.pry
   end
+
+  def answers
+
+  end
+
+
 
 
 end

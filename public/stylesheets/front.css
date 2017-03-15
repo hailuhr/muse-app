@@ -26,11 +26,20 @@ h3 {
   text-align: center;
 }
 
-p {
+p.question {
   font-size: 20px;
   font-family: Avenir;
   text-align: center;
 }
+
+.hint {
+  font-size: 20px;
+  font-family: Avenir;
+  text-align: center;
+  text-decoration-color: gray
+
+}
+
 
 @keyframes float {
   0% {

@@ -32,7 +32,7 @@ class AlbumsController < ActionController::Base
       @message1 = "Job Well Done!"
       @message2 =  "Here are the answers:"
 
-      @message3 = "#{params[:track]} is on Spotify's #{RSpotify::Track.search(params[:track]).first.album.name} album.\n"
+      @message3 = "#{params[:track]} is on Spotify's #{RSpotify::Track.search(params[:track]).first.album.name} album!"
       # binding.pry
 
       # @message += "You guessed #{params[:track]}"
