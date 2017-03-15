@@ -1,55 +1,60 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div style="text-align: center">
+<link href="/stylesheets/front.css" rel="stylesheet">
 
-  <%= form_tag ("/answers") do |f| %>
-  <%= @album_questions[0].release_year[:question] %>
-
-    <br>
-    <br>
-    <label><input type="text" name="release_year" value=""></label>
-    <input type="hidden" name="release_year_id" value="<%= @album_questions[0].id %>">
-
-    <br>
-    <br>
-    (Hint: Somewhere between <%= @album_questions[0].release_year_option %> or <%= @album_questions[0].release_year_option %>)
-
+<body style="font-family: Avenir">
     <br>
     <br>
     <br>
     <br>
     <br>
-
-  <%= @album_questions[2].popularity_rate[:question] %>
-      <br>
-      <br>
-      <label><input type="text" name="popularity_rate" value=""></label>
-      <input type="hidden" name="popularity_rate_id" value="<%= @album_questions[2].id%>">
-
-      <br>
-      <br>
-      (Hint: Somewhere between <%= @album_questions[2].popularity_rate[:answer] %>% - <%= @album_questions[2].popularity_option %>%)
-
-
     <br>
-    <br>
-    <br>
+    <div style="text-align: center">
+    <div style="text-size: 30px">
+      <%= form_tag ("/answers") do |f| %>
+      <h3><%= @album_questions[0].release_year[:question] %></h3>
 
-  <%= @album_questions[1].track[:question] %>
-      <br>
-      <br>
-      <label><input type="text" name="track_answer" value=""></label>
-      <input type="hidden" name="track" value="<%=@album_questions[1].track[:answer]%>">
-      <br>
-      <br>
-      (True or False)
+        <br>
+        <br>
+        <label><input type="text" name="release_year" value=""></label>
+        <input type="hidden" name="release_year_id" value="<%= @album_questions[0].id %>">
+
+        <br>
+        <br>
+        (Hint: Somewhere between <%= @album_questions[0].release_year_option %> or <%= @album_questions[0].release_year_option %>)
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+      <h3><%= @album_questions[2].popularity_rate[:question] %></h3>
+          <br>
+          <br>
+          <label><input type="text" name="popularity_rate" value=""></label>
+          <input type="hidden" name="popularity_rate_id" value="<%= @album_questions[2].id%>">
+
+          <br>
+          <br>
+          (Hint: Somewhere between <%= @album_questions[2].popularity_rate[:answer] %>% - <%= @album_questions[2].popularity_option %>%)
 
 
-  <%= submit_tag "Submit" %>
-  <% end %>
+        <br>
+        <br>
+        <br>
 
-</div>
+      <h3><%= @album_questions[1].track[:question] %></h3>
+          <br>
+          <br>
+          <label><input type="text" name="track_answer" value=""></label>
+          <input type="hidden" name="track" value="<%=@album_questions[1].track[:answer]%>">
+          <br>
+          <br>
+          (True or False)
+
+          <br>
+          <br>
+      <h3><%= submit_tag "Enter" %></h3>
+      <% end %>
+    </div>
+    </div>
+</body>

@@ -29,19 +29,20 @@ class AlbumsController < ActionController::Base
 
   def answers
 
-      @message = "Job Well Done! Here are the answers:\n"
+      @message1 = "Job Well Done!"
+      @message2 =  "Here are the answers:"
 
-      @message += "#{params[:track]} is on Spotify's #{RSpotify::Track.search(params[:track]).first.album.name} album."
+      @message3 = "#{params[:track]} is on Spotify's #{RSpotify::Track.search(params[:track]).first.album.name} album.\n"
       # binding.pry
 
       # @message += "You guessed #{params[:track]}"
 
       year_album = RSpotify::Album.find(params[:release_year_id])
-      @message += "You guessed " + year_album.name + " was released in " + params[:release_year] + ".\n"
-      @message += "#{year_album.name} was released in #{year_album.release_date.to_i}.\n"
+      @message4 = "You guessed " + year_album.name + " was released in " + params[:release_year] + ".\n"
+      @message5 = "#{year_album.name} was released in #{year_album.release_date.to_i}.\n"
       popularity_album = RSpotify::Album.find(params[:popularity_rate_id])
-      @message += "You guessed #{params[:popularity_rate]} for #{popularity_album.name}'s popularity on Spotify\n"
-      @message += "The answer was: #{popularity_album.popularity}\n"
+      @message6 = "You guessed #{params[:popularity_rate]} for #{popularity_album.name}'s popularity on Spotify\n"
+      @message7 = "The answer was: #{popularity_album.popularity}\n"
       # "Bravo!" + params[:track].values[0] + "is on the "
       # if params[:track] && (params[:track] == "True" || params[:track] == "true")
         # ""
