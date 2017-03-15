@@ -8,8 +8,11 @@ class AlbumsController < ActionController::Base
   end
 
   def search
-    @artists = RSpotify::Artist.search(params[:search])
-    if @artists.empty?
+    if !(params[:search].empty?)
+      @artists = RSpotify::Artist.search(params[:search])
+    end
+
+    if @artists.nil? || @artists.empty?
       @artist_message = "Try Another Name"
     else
       # binding.pry
