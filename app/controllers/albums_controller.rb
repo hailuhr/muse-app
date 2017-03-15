@@ -18,6 +18,7 @@ class AlbumsController < ActionController::Base
       @artist = RSpotify::Artist.search(params[:search]).first
       # @albums = fetch_random_five(@artist.top_tracks(:US).map{|track| track.album })
 
+
       @spotify_albums = unique_albums(@artist.albums).sample(5)
 
       # @albums_unique = @albums.uniq
@@ -29,7 +30,6 @@ class AlbumsController < ActionController::Base
       end
       @albums = @spotify_albums.map{|album| Album.new(album)}
 
-      # binding.pry
 
       render :questions and return
     end
@@ -85,20 +85,22 @@ class AlbumsController < ActionController::Base
       # array.sample(5)
       unique_albums = []
       i = 0
-      until unique_albums.length == 20 || i == 20
+      until unique_albums.length == 20 || i == 20 || array[i].nil?
         if unique_albums.empty?
           unique_albums << array[i]
         else
-          # binding.pry
           if !(unique_albums.any? {|e| e.name == array[i].name })
             unique_albums << array[i]
           end
         end
+        # binding.pry
+
         i += 1
       end
       unique_albums
 
     end
+
 
 
 
