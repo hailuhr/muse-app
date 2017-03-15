@@ -2,16 +2,16 @@
 
 <body style="font-family: Avenir">
     <div style="text-align: center">
-      <h2 style="font-color: green"> Trivia Questions </h2>
+      <h2> Trivia Questions </h2>
 
-    <div style="text-size: 10px; font-weight: bold">
+    <div style="text-size: 20px; font-weight: bold">
       <%= form_tag ("/answers") do |f| %>
 
       <p><%= @album_questions[0].release_year[:question] %></p>
         <label><input type="text" name="release_year" value=""></label>
         <input type="hidden" name="release_year_id" value="<%= @album_questions[0].id %>">
         <br>
-        <p style="text-size: 5px; font-weight: normal; font-color: gray">(Hint: Somewhere between <%= @album_questions[0].release_year_option %> or <%= @album_questions[0].release_year_option %>)</p>
+        <p class="hint">(Hint: Somewhere between <%= @album_questions[0].release_year_option %> or <%= @album_questions[0].release_year_option %>)</p>
 
         <br>
 
@@ -19,13 +19,13 @@
           <label><input type="text" name="popularity_rate" value=""></label>
           <input type="hidden" name="popularity_rate_id" value="<%= @album_questions[2].id%>">
           <br>
-          <p style="text-size: 20px; font-weight: normal; font-color: gray">(Hint: Somewhere between <%= @album_questions[2].popularity_rate[:answer] %>% - <%= @album_questions[2].popularity_option %>%)</p>
+          <p class="hint">(Hint: Somewhere between <%= @album_questions[2].popularity_rate[:answer] %>% - <%= @album_questions[2].popularity_option %>%)</p>
         <br>
 
       <p><%= @album_questions[1].track[:question] %></p>
           <label><input type="text" name="track_answer" value=""></label>
           <input type="hidden" name="track" value="<%=@album_questions[1].track[:answer]%>">
-          <p style="text-size: 20px; font-weight: normal; font-color: gray">(True or False)</p>
+          <p class="hint">(True or False)</p>
           <br>
 
       <%= submit_tag "Enter", class: "btn"%>
