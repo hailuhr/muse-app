@@ -8,18 +8,23 @@ class AlbumsController < ActionController::Base
   end
 
   def search
-    if !(@artists = RSpotify::Artist.search(params[:search]))
-      message = "nah"
+    @artists = RSpotify::Artist.search(params[:search])
+    if @artists.empty?
+      @artist_message = "Try Another Name"
     else
-      @artist = RSpotify::Artist.search(params[:search]).first
-      # @albums = @artist.albums.fetch_random_five
       # binding.pry
-      # @albums = fetch_random_five(@artist.albums(limit: 0, offset: 0, **filters))
+      @artist = RSpotify::Artist.search(params[:search]).first
       @albums = fetch_random_five(@artist.top_tracks(:US).map{|track| track.album })
+
+      if @albums.nil?
+        @artist_message = "Try Another Aame"
+        # render "/application/index"
+      end
       @album_questions = @albums.map{|album| Album.new(album)}
+      render :questions and return
     end
 
-    render :questions
+    render "/application/index" and return
   end
 
 
