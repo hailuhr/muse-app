@@ -11,27 +11,21 @@ class Album
 
     year = args.release_date.to_i
     @release_year = {answer: year, question: "When was #{args.name} released?"}
-    @popularity_rate = {answer: args.popularity, question: "Guess #{args.name}'s popularity rate on Spotify?"}
+    @popularity_rate = {answer: args.popularity, question: "Guess '#{args.name}'s popularity rating on Spotify?"}
     track = args.tracks.sample
+    track_id = track.id
     track_name = args.tracks.sample.name
     track_popularity_rate = track.popularity
 
     @track = {answer: track_name, question: "Is the song '#{track_name}' on the #{args.name} album?"}
 
-    @track_popularity_rate = {answer: track_popularity_rate, question: "Guess the song '#{track_name}'s popularity rate on Spotify?"}
-
-    # binding.pry
-
+    @track_popularity_rate = {answer: track_popularity_rate, question: "Guess the song #{track_name}'s popularity rating on Spotify?", track_id: track_id}
 
     @id = args.id
 
 
   end
 
-
-  # def release_year_option
-  #   self.release_year[:answer].to_i + (-5..5).to_a.sample
-  # end
 
   def release_year_min_option
     self.release_year[:answer].to_i + (-4...-2).to_a.sample
@@ -43,11 +37,6 @@ class Album
     self.release_year[:answer].to_i + (0..before_this_year).to_a.sample
   end
 
-  #
-  # def popularity_option
-  #   before_100 = 99 - self.popularity_rate[:answer]
-  #   self.popularity_rate[:answer] + [-10, before_100].to_a.sample
-  # end
 
   def popularity_min_option
     min = self.popularity_rate[:answer] + [-7, -2].to_a.sample

@@ -10,48 +10,55 @@
     <div style="text-size: 20px; font-weight: bold">
       <%= form_tag ("/answers") do |f| %>
 
-      <p><%= @album_questions[0].release_year[:question] %></p>
+      <p><%= @albums[0].release_year[:question] %></p>
         <label><input type="text" name="release_year" value=""></label>
-        <input type="hidden" style="font-family: Avenir" name="release_year_id" value="<%= @album_questions[0].id %>">
+        <input type="hidden" style="font-family: Avenir" name="release_year_id" value="<%= @albums[0].id %>">
         <br>
-        <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @album_questions[0].release_year_min_option %> - <%= @album_questions[0].release_year_max_option %>)</p>
+        <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @albums[0].release_year_min_option %> - <%= @albums[0].release_year_max_option %>)</p>
 
         <br>
         <br>
 
-      <p><%= @album_questions[1].popularity_rate[:question] %></p>
+      <p><%= @albums[1].popularity_rate[:question] %></p>
           <label><input type="text" name="popularity_rate" value=""></label>
-          <input type="hidden" style="font-family: Avenir" name="popularity_rate_id" value="<%= @album_questions[1].id%>">
+          <input type="hidden" style="font-family: Avenir" name="popularity_rate_id" value="<%= @albums[1].id%>">
           <br>
-          <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @album_questions[1].popularity_min_option %>% - <%= @album_questions[1].popularity_max_option %>%)</p>
+          <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @albums[1].popularity_min_option %>% - <%= @albums[1].popularity_max_option %>%)</p>
         <br>
         <br>
 
-
-      <p><%= @album_questions[2].track[:question] %></p>
-          <label><input type="text" name="track_answer" value=""></label>
-          <input type="hidden" style="font-family: Avenir" name="track" value="<%=@album_questions[2].track[:answer]%>">
-          <p class="hint" style="font-family: Avenir">(Yes or No)</p>
-          <br>
-          <br>
-
-          <p><%= @album_questions[3].release_year[:question] %></p>
-            <label><input type="text" name="sec_release_year" value=""></label>
-            <input type="hidden" style="font-family: Avenir" name="sec_release_year_id" value="<%= @album_questions[3].id %>">
-            <br>
-            <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @album_questions[3].release_year_min_option %> - <%= @album_questions[3].release_year_max_option %>)</p>
-
+        <p><%= @albums[2].track[:question] %></p>
+            <label><input type="text" name="track_answer" value=""></label>
+            <input type="hidden" style="font-family: Avenir" name="track" value="<%=@albums[2].track[:answer]%>">
+            <p class="hint" style="font-family: Avenir">(Yes or No)</p>
             <br>
             <br>
 
-          <p><%= @album_questions[4].popularity_rate[:question] %></p>
-              <label><input type="text" name="sec_popularity_rate" value=""></label>
-              <input type="hidden" style="font-family: Avenir" name="sec_popularity_rate_id" value="<%= @album_questions[4].id%>">
+        <p><%= @albums[3].release_year[:question] %></p>
+              <label><input type="text" name="sec_release_year" value=""></label>
+              <input type="hidden" style="font-family: Avenir" name="sec_release_year_id" value="<%= @albums[3].id %>">
               <br>
-              <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @album_questions[4].popularity_min_option %>% - <%= @album_questions[4].popularity_max_option %>%)</p>
+              <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @albums[3].release_year_min_option %> - <%= @albums[3].release_year_max_option %>)</p>
+
+              <br>
+              <br>
+
+
+          <p><%= @albums[4].popularity_rate[:question] %></p>
+              <label><input type="text" name="sec_popularity_rate" value=""></label>
+              <input type="hidden" style="font-family: Avenir" name="sec_popularity_rate_id" value="<%= @albums[4].id%>">
+              <br>
+              <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @albums[4].popularity_min_option %>% - <%= @albums[4].popularity_max_option %>%)</p>
             <br>
             <br>
 
+          <p><%= @albums[1].track_popularity_rate[:question] %></p>
+                <label><input type="text" name="first_track_popularity_rate" value=""></label>
+                <input type="hidden" style="font-family: Avenir" name="first_track_popularity_id" value="<%= @albums[1].track_popularity_rate[:track_id]%>">
+                <br>
+                <p class="hint" style="font-family: Avenir">(Hint: Somewhere between <%= @albums[1].track_popularity_min_option %>% - <%= @albums[1].track_popularity_max_option %>%)</p>
+              <br>
+              <br>
 
         <%= button_tag(type: "submit", class: "btn btn-default") do %>
           Enter
