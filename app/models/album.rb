@@ -47,7 +47,7 @@ class Album
   end
 
   def popularity_max_option
-    before_max_100 = 100 - self.popularity_rate[:answer]
+    before_max_100 = 99 - self.popularity_rate[:answer]
     self.popularity_rate[:answer] + [0, before_max_100].to_a.sample
   end
 
