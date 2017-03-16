@@ -24,9 +24,9 @@ module AlbumsHelper
     end
 
 
-    if params[:first_track_popularity_id]
-      array_of_messages << track_popularity_answer(params[:first_track_popularity_id])
-    end
+    # if params[:first_track_popularity_id]
+    #   array_of_messages << track_popularity_answer(params[:first_track_popularity_id])
+    # end
     # binding.pry
     array_of_messages
   end
