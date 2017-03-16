@@ -32,7 +32,7 @@
 
   <% if @albums[2] %>
         <p><%= @albums[2].track[:question] %></p>
-            <label><input type="text" name="track_answer" value=""></label>
+            <label><input type="text" name="track" value=""></label>
             <input type="hidden" style="font-family: Avenir" name="track" value="<%=@albums[2].track[:answer]%>">
             <p class="hint" style="font-family: Avenir">(Yes or No)</p>
             <br>
